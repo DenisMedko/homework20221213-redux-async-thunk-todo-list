@@ -1,0 +1,9 @@
+@use './common/styles/templates';
+
+.darkTheme {
+    @extend %darkTheme;
+}
+
+.lightTheme {
+@extend %lightTheme;
+}

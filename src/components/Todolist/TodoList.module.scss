@@ -1,0 +1,12 @@
+@use '../../common/styles/templates';
+.itemsList {
+    margin-top: 0 ;
+}
+
+.darkTheme {
+    @extend %darkTheme;
+}
+
+.lightTheme {
+@extend %lightTheme;
+}

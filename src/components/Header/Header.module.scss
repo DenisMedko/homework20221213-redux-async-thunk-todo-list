@@ -1,0 +1,26 @@
+@use '../../common/styles/templates';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  &Item {
+    margin: 0 10px;
+    min-width: 50px;
+  }
+}
+
+.darkTheme {
+  @extend %darkTheme;
+}
+
+.lightTheme {
+  @extend %lightTheme;
+}

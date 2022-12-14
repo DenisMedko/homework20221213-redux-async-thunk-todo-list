@@ -1,0 +1,49 @@
+@use '../../common/styles/templates';
+
+.form {
+    display: flex;
+    justify-content: center;
+    //background-color: gray;
+    border: 2px solid black ;
+    border-radius: 5px;
+    margin: 10px;
+}
+.todoInput{
+    display: block;
+    width: 100%;
+    margin: 10px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    //color: #212529;
+    //background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+.todoInvalidInput{
+    background-color: rgb(247, 205, 219);
+}
+.todoAddBtn{
+    color: #fff;
+    background-color: #0d6efd;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    
+}
+
+.darkTheme {
+    @extend %darkTheme;
+}
+
+.lightTheme {
+@extend %lightTheme;
+}

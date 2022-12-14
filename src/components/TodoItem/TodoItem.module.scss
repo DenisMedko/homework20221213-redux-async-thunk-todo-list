@@ -1,0 +1,55 @@
+@use '../../common/styles/templates';
+.todoItem {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:nth-child(odd) {
+        background-color: #cfe2ff;  
+    }
+    &:nth-child(even) {
+        background-color: #d7d8da;  
+    }
+}
+.todoItemTitle {
+    margin: 10px;
+    width: 70%;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.deleteBtn {
+    color: #fff;
+    background-color: #dc3545;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+.checkBox {
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.darkTheme {
+    @extend %darkTheme;
+}
+
+.lightTheme {
+@extend %lightTheme;
+}
+
+
