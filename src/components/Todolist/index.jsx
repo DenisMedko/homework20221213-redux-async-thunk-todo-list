@@ -14,19 +14,23 @@ const TodoList = () => {
         [styles.darkTheme]: theme === THEMES.DARK,
         [styles.lightTheme]: theme === THEMES.LIGHTL,
     });
-    //const todos = useSelector((state) => state.todos.todosArr);
     
     const dispatch = useDispatch();
+    
     useEffect(() => {
         dispatch(getTodos('Hello there'));
         }, []);
-        
-    const { todosArr: todos, isLoading, error } = useSelector((state) => state.todos);      
+    
+    const { todosArr: todos, isLoading, error } = useSelector((state) => state.todos);
+        // useEffect(() => {
+        //     dispatch(getTodos('Hello there'));
+        //     }, [todos]);
+
     const todoList = todos.map( todo => <TodoItem key={todo.id} todo={todo}/>);
     return (    
         <div className={className}>
             {isLoading && <div>Loading</div>}
-            {error && <div>Error</div>}
+            {error && <div>{error}</div>}
             {todos.length > 0 && todoList}  
         </div>
     );
