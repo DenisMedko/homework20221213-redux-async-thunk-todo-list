@@ -14,10 +14,11 @@ const TodoItem = (props) => {
         [styles.lightTheme]: theme === THEMES.LIGHTL,
     });
 
-    const {todo : {id, text: title, isDone}} = props;
+    const {todo : {id, text: title, isDone}, index} = props;
+    
     const dispatch = useDispatch();
 
-    const { setIsDone, remove } = bindActionCreators(
+    const { setIsDone, remove, removeOnServer, changeOnServer } = bindActionCreators(
         { ...todoActionCreators },
         dispatch
     );
@@ -28,10 +29,20 @@ const TodoItem = (props) => {
             <input type="checkbox" 
                 name={id} 
                 checked={isDone} 
-                onChange={ () => setIsDone(+id) }
+                onChange={ () => {
+                    setIsDone(index);
+                    changeOnServer({id: +id, text: title, isDone: isDone});
+                } }
                 className={styles.checkBox}
             />
-            <button type="button" name={id} onClick={() => remove(+id)} className={styles.deleteBtn}>X</button>
+            <button 
+                type="button" 
+                name={id} 
+                onClick={() => {
+                    remove(+id); 
+                    removeOnServer(+id)
+                }} 
+                className={styles.deleteBtn}>X</button>
         </div>);   
 }
 

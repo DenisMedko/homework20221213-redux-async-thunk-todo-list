@@ -21,13 +21,13 @@ const InputForm = () => {
 
     const dispatch = useDispatch();
 
-    const { add } = bindActionCreators(
+    const { addOnServer } = bindActionCreators(
         { ...todoActionCreators },
         dispatch
     );
 
     const handleAddBtn = (values, formikBag) => {
-        add(values.title);
+        addOnServer(values.title);
         formikBag.resetForm();
     };
 

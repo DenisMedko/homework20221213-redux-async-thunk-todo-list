@@ -4,7 +4,7 @@ import TodoItem from '../TodoItem';
 import styles from './TodoList.module.scss';
 import cx from 'classnames';
 import CONSTANTS from '../../constants';
-import { getTodos } from '../../store/slices/todos';
+import { getOnServer } from '../../store/slices/todos';
 
 const { THEMES } = CONSTANTS;
 
@@ -17,16 +17,16 @@ const TodoList = () => {
     
     const dispatch = useDispatch();
     
-    useEffect(() => {
-        dispatch(getTodos('Hello there'));
-        }, []);
-    
-    const { todosArr: todos, isLoading, error } = useSelector((state) => state.todos);
-        // useEffect(() => {
-        //     dispatch(getTodos('Hello there'));
-        //     }, [todos]);
+    const { todosArr: todos, isLoading, error } = useSelector((state) => state.todos);   
 
-    const todoList = todos.map( todo => <TodoItem key={todo.id} todo={todo}/>);
+    useEffect(() => {
+        dispatch(getOnServer('Hello there'));
+        }, []);
+
+    const todoList = todos.map( (todo, index) => 
+        <TodoItem key={todo.id} todo={todo} index={index}/>
+    );
+    
     return (    
         <div className={className}>
             {isLoading && <div>Loading</div>}
