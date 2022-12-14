@@ -14,7 +14,7 @@ const TodoItem = (props) => {
         [styles.lightTheme]: theme === THEMES.LIGHTL,
     });
 
-    const {todo : {id, title, isDone}} = props;
+    const {todo : {id, text: title, isDone}} = props;
     const dispatch = useDispatch();
 
     const { setIsDone, remove } = bindActionCreators(

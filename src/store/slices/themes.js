@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import CONSTANTS from '../../constants';
 const { THEMES } = CONSTANTS;
 
-const initialState = THEMES.DARK;
+const initialState = THEMES.LIGHTL;
 const themeSlice = createSlice({
     name: 'themes',
     initialState,
